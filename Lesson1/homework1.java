@@ -14,7 +14,7 @@ public class homework1 {
             num_sum += i;
             num_fact *= i;
         }
-        System.out.println("Треугольное число "+ num +" равно: " + num_sum);
-        System.out.println("Факториал числа "+ num+ " равен: "+ num_fact);
-    }   
+        System.out.println("Треугольное число " + num + " равно: " + num_sum);
+        System.out.println("Факториал числа " + num + " равен: " + num_fact);
+    }
 }
