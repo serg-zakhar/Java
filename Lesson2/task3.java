@@ -28,7 +28,9 @@ public class task3 {
         for (int i = halfArray +1; i < strArray.length; i++) {
             strHalf2.append(strArray[i]);
         }
-        if (strHalf1 == strHalf2.reverse()) {
+        System.out.println(strHalf1);
+        System.out.println(strHalf2);
+        if (strHalf1.equals(strHalf2.reverse())) {
             return true;
         }
         else {
