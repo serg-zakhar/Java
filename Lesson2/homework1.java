@@ -10,18 +10,18 @@ import java.util.Scanner;
 
 public class homework1 {
     public static void main(String[] args) {
-        String path = "log_hw1.txt";
+        String path = "Lesson2/log_hw1.txt";
         int[] numArray = Arrays.stream(inputString().split(",")).mapToInt(Integer::parseInt).toArray();
         int temp;
         for (int i = 0; i < numArray.length; i++) {
             for (int j = 1; j < numArray.length - i; j++) {
-                if (numArray[j-1]> numArray[j]) {
-                    temp = numArray[j-1];
-                    numArray[j-1] = numArray[j];
+                if (numArray[j - 1] > numArray[j]) {
+                    temp = numArray[j - 1];
+                    numArray[j - 1] = numArray[j];
                     numArray[j] = temp;
-                    System.out.println(Arrays.toString(numArray));
-                    logging(Arrays.toString(numArray), path); 
-                }          
+                    // System.out.println(Arrays.toString(numArray));
+                    logging(Arrays.toString(numArray), path);
+                }
             }
         }
     }
@@ -30,7 +30,9 @@ public class homework1 {
         File logfile = new File(path);
         try {
             FileWriter fw = new FileWriter(logfile, true);
+            // System.out.println(str);
             fw.write(str);
+            fw.write("\n");
             fw.close();
         } catch (Exception e) {
             System.out.println("Error!");
