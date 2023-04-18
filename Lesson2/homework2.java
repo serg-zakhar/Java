@@ -16,13 +16,13 @@ package Lesson2;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class homework2 {
     public static void main(String[] args) {
         String path = "Lesson2/hw2_file.txt";
-        String line = fileRead(path);
-        StringBuilder str = new StringBuilder();
+        // String line = fileRead(path);
+        // StringBuilder str = new StringBuilder();
         // System.out.println(line);
         // String[] strArray = Arrays.stream(line.split(",")).toArray();
         // str.append(line.split(","));
