@@ -2,9 +2,14 @@
 
 package Lesson2;
 
-import java.io.File;
-import java.io.FileWriter;
+// import java.io.File;
+// import java.io.FileWriter;
+// import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
 
 public class homework3 {
     public static void main(String[] args) {
@@ -22,16 +27,19 @@ public class homework3 {
             case ("+"):
                 str = num1 + " + " + num2 + " = " + (num1 + num2);
                 System.out.println(str);
+                // log.main(args);
                 logging(str, path);
                 break;
             case ("-"):
                 str = num1 + " - " + num2 + " = " + (num1 - num2);
                 System.out.println(str);
+                // log.main(args);
                 logging(str, path);
                 break;
             case ("*"):
                 str = num1 + " * " + num2 + " = " + (num1 * num2);
                 System.out.println(str);
+                // log.main(args);
                 logging(str, path);
                 break;
             case ("/"):
@@ -40,6 +48,7 @@ public class homework3 {
                 str = num1 + " / " + num2 + " = " + (n1 / n2);
                 System.out.println(str);
                 logging(str, path);
+                // log.main(args);
                 break;
             default:
                 System.out.println("Неверный знак оператора!");
@@ -48,15 +57,32 @@ public class homework3 {
     }
 
     public static void logging(String str, String path) {
-        File logfile = new File(path);
         try {
-            FileWriter fw = new FileWriter(logfile, true);
-            // System.out.println(str);
-            fw.write(str);
-            fw.write("\n");
-            fw.close();
-        } catch (Exception e) {
-            System.out.println("Error!");
+            Logger fl = Logger.getLogger(log.class.getName());
+            String logpath = path;
+            String msg = str;
+            FileHandler fh = new FileHandler(logpath, true);
+            fl.addHandler(fh);
+            SimpleFormatter form = new SimpleFormatter();
+            // XMLFormatter form = new XMLFormatter();
+            fh.setFormatter(form);
+            fl.info(msg);
+        }
+        catch (Exception e) {
+            System.err.println("Error");
         }
     }
+
+    // public static void logging(String str, String path) {
+    //     File logfile = new File(path);
+    //     try {
+    //         FileWriter fw = new FileWriter(logfile, true);
+    //         // System.out.println(str);
+    //         fw.write(str);
+    //         fw.write("\n");
+    //         fw.close();
+    //     } catch (Exception e) {
+    //         System.out.println("Error!");
+    //     }
+    // }
 }

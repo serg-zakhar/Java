@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
 
-import javax.swing.text.html.parser.Element;
 
 public class homework2 {
     public static void main(String[] args) {
@@ -29,10 +28,12 @@ public class homework2 {
         String[] linesArray = lines.split("\n");
         System.out.println(Arrays.toString(linesArray));
         for (int i = 0; i < linesArray.length; i++) {
-            String strLine = linesArray[i].toString().replace("фамилия", "Студент");
-            strLine = strLine.replace("оценка", "получил");
-            strLine = strLine.replace("предмет", "по предмету: ");
-            str.append(strLine);
+            String strLine = linesArray[i].toString().replace(":", "").replace(",", "");
+            strLine = strLine.replace("фамилия", "Студент ");
+            strLine = strLine.replace("оценка", " получил ");
+            strLine = strLine.replace("предмет", " по предмету: ");
+            strLine = strLine.replace("\"", "");
+            str.append(strLine + "\n");
             // String[] strArray = linesArray[i].split(",");
             // System.out.println(Arrays.toString(strArray));
             // for (int j = 0; j < strArray.length; j++) {
