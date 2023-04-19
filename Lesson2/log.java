@@ -10,21 +10,21 @@ import java.util.logging.*;
 public class log {
     public static void main(String[] args) throws IOException {
         Logger fl = Logger.getLogger(log.class.getName());
-        String logpath = args[0];
-        String msg = args[1];
+        String logpath = "Lesson2/log.txt";
+        String msg = "test";
         FileHandler fh = new FileHandler(logpath, true);
         fl.addHandler(fh);
         SimpleFormatter form = new SimpleFormatter();
         // XMLFormatter form = new XMLFormatter();
         fh.setFormatter(form);
-        // Random rand = new Random();
-        // for (int i = 0; i < args.length; i++) {
-        //     int j = rand.nextInt(10);
-        //     fl.log(Level.INFO, "Elemaent: ", j);
-        // }
-        // fl.log(Level.WARNING, "logger off: ");
+        Random rand = new Random();
+        for (int i = 0; i < 10; i++) {
+            int j = rand.nextInt(10);
+            fl.log(Level.INFO, "Element: " + j);
+        }
+        fl.log(Level.WARNING, "logger off");
         fl.info(msg);
-        // fl.warning("logpath");
+        fl.warning(logpath);
     
     }
 }

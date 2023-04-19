@@ -1,0 +1,52 @@
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 7
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 6
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 7
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 6
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 7
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 1
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 3
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 0
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 0
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: Element: 5
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+WARNING: logger off
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+INFO: test
+апр. 19, 2023 11:26:35 AM Lesson2.log main
+WARNING: Lesson2/log.txt
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 7
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 2
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 8
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 3
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 5
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 3
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 5
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 9
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 1
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: Element: 4
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+WARNING: logger off
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+INFO: test
+апр. 19, 2023 1:44:35 PM Lesson2.log main
+WARNING: Lesson2/log.txt
