@@ -1,5 +1,6 @@
 package Lesson4;
 
+import java.util.LinkedList;
 // import java.lang.reflect.Array;
 // import java.util.ArrayList;
 // import java.util.Arrays;
@@ -14,18 +15,24 @@ import java.util.Scanner;
 
 public class task2 {
     public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        // int digit = 0;
-        sc.close();
         while (true) {
+            System.out.println("Введите строку: ");
+            String input = sc.nextLine();
             if (input.contains("print~")) {
-                int index = Integer.parseInt(input.split("")[3]);
-                System.out.println(index);
+                int index = Integer.parseInt(input.split("~")[1]);
+                System.out.println(list.get(index));
+                list.remove(index);
             }
-
+            else if (input.equals("stop")) {
+                break;
+            }
+            else {
+                list.add(input);
+            }
         }
-            
+        sc.close();    
     }
 }
     

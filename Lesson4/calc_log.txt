@@ -1,0 +1,56 @@
+апр. 21, 2023 12:24:46 PM Lesson4.homework3 logging
+INFO: 5 + 5 = 10
+апр. 21, 2023 12:34:12 PM Lesson4.homework3 logging
+INFO: 6 + 9 = 15.0
+апр. 21, 2023 12:47:29 PM Lesson4.homework3 logging
+INFO: 6 / 4 = 1.5
+апр. 21, 2023 1:03:39 PM Lesson4.homework3 logging
+INFO: 6 + 9 = 15.0
+апр. 21, 2023 1:03:44 PM Lesson4.homework3 logging
+INFO: 15 + 66 = 81.0
+апр. 21, 2023 1:03:56 PM Lesson4.homework3 logging
+INFO: 81 / 6 = 13.5
+апр. 21, 2023 1:04:02 PM Lesson4.homework3 logging
+INFO: Отмена последнего действия
+апр. 21, 2023 1:14:57 PM Lesson4.homework3 logging
+INFO: 7 - 9 = -2.0
+апр. 21, 2023 1:15:11 PM Lesson4.homework3 logging
+INFO: 8 - 9 = -1.0
+апр. 21, 2023 2:03:45 PM Lesson4.homework3 logging
+INFO: 5 + 4 = 9.0
+апр. 21, 2023 2:05:24 PM Lesson4.homework3 logging
+INFO: 5 + 6 = 11.0
+апр. 21, 2023 2:05:28 PM Lesson4.homework3 logging
+INFO: 11.0 + 4 = 15.0
+апр. 21, 2023 2:07:29 PM Lesson4.homework3 logging
+INFO: 5 + 7 = 12.0
+апр. 21, 2023 2:07:47 PM Lesson4.homework3 logging
+INFO: 12.0 - 2 = 10.0
+апр. 21, 2023 2:08:20 PM Lesson4.homework3 logging
+INFO: 7 + 6 = 13.0
+апр. 21, 2023 2:08:42 PM Lesson4.homework3 logging
+INFO: 13.0 - 1 = 12.0
+апр. 21, 2023 2:08:48 PM Lesson4.homework3 logging
+INFO: 12.0 * 6 = 72.0
+апр. 21, 2023 2:08:56 PM Lesson4.homework3 logging
+INFO: 72.0 / 3 = 24.0
+апр. 21, 2023 2:09:02 PM Lesson4.homework3 logging
+INFO: Отмена последнего действия
+апр. 21, 2023 2:09:16 PM Lesson4.homework3 logging
+INFO: 72.0 + 4 = 76.0
+апр. 21, 2023 2:09:21 PM Lesson4.homework3 logging
+INFO: 76.0 / 5 = 15.2
+апр. 21, 2023 2:21:27 PM Lesson4.homework3 logging
+INFO: 7 + 8 = 15.0
+апр. 21, 2023 2:21:31 PM Lesson4.homework3 logging
+INFO: 15.0 - 2 = 13.0
+апр. 21, 2023 2:21:33 PM Lesson4.homework3 logging
+INFO: 13.0 / 3 = 4.3333335
+апр. 21, 2023 2:21:42 PM Lesson4.homework3 logging
+INFO: Отмена последнего действия
+апр. 21, 2023 2:21:49 PM Lesson4.homework3 logging
+INFO: 13.0 + 5 = 18.0
+апр. 21, 2023 2:21:54 PM Lesson4.homework3 logging
+INFO: Отмена последнего действия
+апр. 21, 2023 2:21:59 PM Lesson4.homework3 logging
+INFO: Отмена последнего действия
