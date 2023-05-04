@@ -67,6 +67,7 @@ public class homework1 {
         System.out.println("Ноутбук: " + notebook3);
         System.out.println("Введите объем ОЗУ:");
         setRam(Integer.parseInt(sc.nextLine()), notebook3);
+        sc.close();
 
         LinkedHashMap<Integer, Integer> result = mainMenu();
         showSearch(result, notebook1);
