@@ -39,11 +39,20 @@ public class HW3 {
             System.out.println(employee);
         }
 
-        //Arrays.sort(employees, new NameComparator());
-        Arrays.sort(employees);
+        Arrays.sort(employees, new NameComparator());
+        System.out.printf("\n*** Отсортированный массив сотрудников по имени, фамилии ***\n\n");
+        for (Employee employee : employees){
+            System.out.println(employee);
+        }
 
-        System.out.printf("\n*** Отсортированный массив сотрудников ***\n\n");
+        Arrays.sort(employees, new AgeComparator());
+        System.out.printf("\n*** Отсортированный массив сотрудников по возрасту ***\n\n");
+        for (Employee employee : employees){
+            System.out.println(employee);
+        }
 
+        Arrays.sort(employees, new SalaryComparator());
+        System.out.printf("\n*** Отсортированный массив сотрудников по зарплате ***\n\n");
         for (Employee employee : employees){
             System.out.println(employee);
         }
@@ -74,6 +83,13 @@ class NameComparator implements Comparator<Employee> {
             res = o1.surName.compareTo(o2.surName);
         }
         return res;
+    }
+}
+
+class AgeComparator implements Comparator<Employee> {
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        return Integer.compare(o1.age, o2.age);
     }
 }
 
@@ -119,7 +135,7 @@ class Worker extends Employee {
 
     @Override
     public String toString() {
-        return String.format("%s %s; Рабочий; Среднемесячная заработная плата (фиксированная месячная оплата): %.2f (руб.)", name, surName, salary);
+        return String.format("%s %s; Рабочий, возраст %d лет: Среднемесячная заработная плата (фиксированная месячная оплата): %.2f (руб.)", name, surName, age, salary);
     }
 }
 
@@ -139,6 +155,6 @@ class Freelancer extends Employee{
 
     @Override
     public String toString() {
-        return String.format("%s %s; Фрилансер; Среднемесячная заработная плата (оплата за отработанное время): %.2f (руб.)", name, surName, calculateSalary());
+        return String.format("%s %s; Фрилансер, возраст %d лет; Среднемесячная заработная плата (оплата за отработанное время): %.2f (руб.)", name, surName, age, calculateSalary());
     }
 }
