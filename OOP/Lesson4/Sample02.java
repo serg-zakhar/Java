@@ -1,4 +1,4 @@
-package ru.geekbrains.sample02;
+package OOP.Lesson4;
 
 public class Sample02 {
 

@@ -12,12 +12,12 @@ public class HW3 {
         String[] names = new String[] { "Анатолий", "Глеб", "Клим", "Мартин", "Лазарь", "Владлен", "Клим", "Панкратий", "Рубен", "Герман" };
         String[] surnames = new String[] { "Григорьев", "Фокин", "Шестаков", "Хохлов", "Шубин", "Бирюков", "Копылов", "Горбунов", "Лыткин", "Соколов" };
 
-        int workerSalary = random.nextInt(200, 300);
+        int workerSalary = random.nextInt(100) + 200;
         int freelancerSalary = 1500;
-        int index = random.nextInt(30, 50);
-        int hours = random.nextInt(20,40);
-        int typeWorker = random.nextInt(0,2);
-        int age = random.nextInt(20,40);
+        int index = random.nextInt(20) + 30;
+        int hours = random.nextInt(20) + 20;
+        int typeWorker = random.nextInt(2);
+        int age = random.nextInt(20) + 20;
         // System.out.println(typeWorker);
 
         if (typeWorker == 1) {

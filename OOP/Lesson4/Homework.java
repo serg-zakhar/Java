@@ -1,4 +1,4 @@
-package ru.geekbrains.sample01;
+package OOP.Lesson4;
 
 import java.util.ArrayList;
 
@@ -21,6 +21,16 @@ import java.util.ArrayList;
      g. Не забываем про метод добавления фрукта в коробку.
  */
 public class Homework {
+    public static void main(String[] args) {
+        // ArrayList<Apple> box1 = new ArrayList<Apple>();
+        // box1.add(new Apple());
+        // box1.add(new Apple());
+        Box<Apple> box1 = new Box<>();
+        box1.addFruit(new Apple());
+        box1.addFruit(new Apple());
+        System.out.println(box1.getWeight());
+        
+    }
 }
 
 abstract class Fruit{
@@ -43,9 +53,29 @@ class Apple extends Fruit{
     }
 }
 
+class Orange extends Fruit{
+
+    public Orange() {
+        super(1.5f);
+    }
+}
+
 class Box<T extends Fruit>{
 
+    // protected int count;
     ArrayList<T> fruits;
+
+    public void addFruit(T fruit) {
+        this.fruits.add(fruit);
+    }
+
+    // public Box(){
+    //     super()
+    // }
+
+    public float getWeight(){
+        return fruits.size() * this.getWeight();
+    }
 
 }
 
