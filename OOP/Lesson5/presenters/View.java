@@ -1,6 +1,6 @@
-package ru.geekbrains.lesson5.presenters;
+package OOP.Lesson5.presenters;
 
-import ru.geekbrains.lesson5.models.Table;
+import OOP.Lesson5.models.Table;
 
 import java.util.Collection;
 

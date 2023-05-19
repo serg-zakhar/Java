@@ -1,9 +1,9 @@
-package ru.geekbrains.lesson5;
+package OOP.Lesson5;
 
-import ru.geekbrains.lesson5.models.Table;
-import ru.geekbrains.lesson5.models.TableModel;
-import ru.geekbrains.lesson5.presenters.BookingPresenter;
-import ru.geekbrains.lesson5.views.BookingView;
+import OOP.Lesson5.models.Table;
+import OOP.Lesson5.models.TableModel;
+import OOP.Lesson5.presenters.BookingPresenter;
+import OOP.Lesson5.views.BookingView;
 
 import java.util.Date;
 

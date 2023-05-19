@@ -1,7 +1,7 @@
-package ru.geekbrains.lesson5.presenters;
+package OOP.Lesson5.presenters;
 
-import ru.geekbrains.lesson5.models.Table;
-import ru.geekbrains.lesson5.models.TableModel;
+import OOP.Lesson5.models.Table;
+import OOP.Lesson5.models.TableModel;
 
 import java.util.Collection;
 import java.util.Date;
