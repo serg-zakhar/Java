@@ -57,9 +57,10 @@ public class Order {
     }
 
     private String prompt(String message) {
-        Scanner in = new Scanner(System.in);
-        System.out.print(message);
-        return in.nextLine();
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.print(message);
+            return in.nextLine();
+        }
     }
 
 }
