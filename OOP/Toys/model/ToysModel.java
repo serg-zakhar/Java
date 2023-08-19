@@ -11,6 +11,7 @@ import OOP.Toys.classes.Toy;
 public class ToysModel {
 
     private List<Toy> toys;
+    private Toy toy;
     private String filename;
     
     public ToysModel(String filename) {
@@ -25,6 +26,15 @@ public class ToysModel {
     public List<Toy> getToys() {
         return toys;
     }
+
+    // public Toy getToy(int id){
+    //     for (Toy toy : toys){
+    //         if (toy.getId() == id) {
+    //             return toy;
+    //         }
+    //         return null;
+    //     }
+    // }
 
     public boolean load(String filename) {
         toys = new LinkedList<>();
@@ -71,7 +81,7 @@ public class ToysModel {
         }
     }
 
-    public boolean delete(String filename, int id) {
+    public boolean delete(int id) {
         for (Toy toy : toys) {
             if (toy.getId() == id) {
                 toys.remove(toy);
@@ -83,12 +93,14 @@ public class ToysModel {
         return false;
     }
 
-    public void changeId(String filename){
+    public void changeId(){
         int i = 1;
         for (Toy toy : toys) {
             toy.setId(i);
             i++;
         }
     }
+
+
 
 }

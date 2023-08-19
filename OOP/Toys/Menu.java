@@ -70,8 +70,8 @@ public class Menu {
                 System.out.print("Выберите id удаляемой игрушки: ");
                 try {
                     int id = Integer.parseInt(sc.nextLine());
-                    if (toysModel.delete(filename, id)) {
-                        toysModel.changeId(filename);
+                    if (toysModel.delete(id)) {
+                        toysModel.changeId();
                         toysModel.save(filename);
                     }
                 } catch (Exception ex) {
@@ -96,9 +96,8 @@ public class Menu {
 
                     if (choise.equals("1")){ // Вывод всех
 
-                        filename = "OOP/Toys/toys.csv";
-                        ToysModel toysModel = new ToysModel(filename);
-                        if (toysModel.load(filename)) {
+                        ToysModel toysModel = new ToysModel("OOP/Toys/toys.csv");
+                        if (toysModel.load("OOP/Toys/toys.csv")) {
                             ToysView toysView = new ToysView(toysModel.getToys());
                             toysView.ShowToys();
                         } else {
@@ -107,9 +106,9 @@ public class Menu {
 
                     } else if (choise.equals("2")){ // Вывод розыгрыша
 
-                        ToysModel toysModel = new ToysModel(filename);
-                        if (toysModel.load(filename)) {
-                            ToysView toysView = new ToysView(toysModel.getToys());
+                        ToysModel toysPrize = new ToysModel(filename);
+                        if (toysPrize.load(filename)) {
+                            ToysView toysView = new ToysView(toysPrize.getToys());
                             toysView.ShowToys();
                         } else {
                             System.out.println("Список пуст.");
@@ -117,7 +116,37 @@ public class Menu {
 
                     } else if (choise.equals("3")){ // Довавить
 
+                        ToysModel toysModel = new ToysModel("OOP/Toys/toys.csv");
+                        if (toysModel.load("OOP/Toys/toys.csv")) {
+                            ToysView toysView = new ToysView(toysModel.getToys());
+                            toysView.ShowToys();
+                        }
+                        System.out.print("Выберите id игрушки, которую добавить в розыгрыш: ");
+                        int id = Integer.parseInt(sc.nextLine());
+                        ToysModel toysPrize = new ToysModel(filename);
+                        for (Toy toy : toysModel.getToys()){
+                            if (toy.getId() == id) {
+                                toysPrize.add(toy);
+                                if (toysPrize.save(filename)) {
+                                    System.out.println("Игрушка успешно добавлена в розыгрыш!");
+                                } else {
+                                    System.out.println("Ошибка при добавлении игрушки.");
+                                }
+                            // } else {
+                            //     System.out.printf("Игрушка с id %d не найдена.", id);
+                            }
+                        }
+                        
 
+                        // try {
+                        //     int id = Integer.parseInt(sc.nextLine());
+                        //     if (toysModel.delete(id)) {
+                        //         toysModel.changeId();
+                        //         toysModel.save(filename);
+                        //     }
+                        // } catch (Exception ex) {
+                        //     System.out.println("Ошибка при удалении игрушки.\n" + ex.toString());
+                        // }
 
                     } else if (choise.equals("4")){ // Удалить
 
