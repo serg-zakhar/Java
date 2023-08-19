@@ -126,31 +126,40 @@ public class Menu {
                         ToysModel toysPrize = new ToysModel(filename);
                         for (Toy toy : toysModel.getToys()){
                             if (toy.getId() == id) {
-                                toysPrize.add(toy);
+                                if (toysPrize.load(filename)){
+                                    try {
+                                        toysPrize.add(toy);
+                                    } catch (Exception ex) {
+                                        System.out.println("Ошибка при вводе данных.\n" + ex.toString());
+                                    }
+                                }                               
                                 if (toysPrize.save(filename)) {
                                     System.out.println("Игрушка успешно добавлена в розыгрыш!");
                                 } else {
                                     System.out.println("Ошибка при добавлении игрушки.");
                                 }
-                            // } else {
-                            //     System.out.printf("Игрушка с id %d не найдена.", id);
+                            } else {
+                                System.out.printf("Игрушка с id %d не найдена.", id);
                             }
                         }
-                        
-
-                        // try {
-                        //     int id = Integer.parseInt(sc.nextLine());
-                        //     if (toysModel.delete(id)) {
-                        //         toysModel.changeId();
-                        //         toysModel.save(filename);
-                        //     }
-                        // } catch (Exception ex) {
-                        //     System.out.println("Ошибка при удалении игрушки.\n" + ex.toString());
-                        // }
 
                     } else if (choise.equals("4")){ // Удалить
 
-
+                        ToysModel toysPrize = new ToysModel(filename);
+                        if (toysPrize.load(filename)) {
+                            ToysView toysView = new ToysView(toysPrize.getToys());
+                            toysView.ShowToys();
+                        }
+                        System.out.print("Выберите id удаляемой игрушки: ");
+                        try {
+                            int id = Integer.parseInt(sc.nextLine());
+                            if (toysPrize.delete(id)) {
+                                toysPrize.changeId();
+                                toysPrize.save(filename);
+                            }
+                        } catch (Exception ex) {
+                            System.out.println("Ошибка при удалении игрушки.\n" + ex.toString());
+                        }
 
                     } else if (choise.equals("5")){ // Розыгрыш
 
