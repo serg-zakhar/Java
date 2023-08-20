@@ -27,14 +27,6 @@ public class ToysModel {
         return toys;
     }
 
-    // public Toy getToy(int id){
-    //     for (Toy toy : toys){
-    //         if (toy.getId() == id) {
-    //             return toy;
-    //         }
-    //         return null;
-    //     }
-    // }
 
     public boolean load(String filename) {
         toys = new LinkedList<>();
@@ -100,6 +92,7 @@ public class ToysModel {
             i++;
         }
     }
+
 
 
 

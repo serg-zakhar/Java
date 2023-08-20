@@ -1,5 +1,6 @@
 package OOP.Toys;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import OOP.Toys.classes.Toy;
@@ -138,8 +139,8 @@ public class Menu {
                                 } else {
                                     System.out.println("Ошибка при добавлении игрушки.");
                                 }
-                            } else {
-                                System.out.printf("Игрушка с id %d не найдена.", id);
+                            // } else {
+                            //     System.out.printf("Игрушка с id %d не найдена.", id);
                             }
                         }
 
@@ -163,7 +164,26 @@ public class Menu {
 
                     } else if (choise.equals("5")){ // Розыгрыш
 
-                        
+                        ToysModel toysPrize = new ToysModel(filename);
+                        if (toysPrize.load(filename)) {
+                            ToysView toysView = new ToysView(toysPrize.getToys());
+                            toysView.ShowToys();
+                        }
+                        int weightSum = 0;
+                        // int count = 0;
+                        for (Toy toy : toysPrize.getToys()){
+                            weightSum += toy.getWeight();
+                        }
+                        int random = new Random().nextInt(weightSum);
+                        System.out.println(weightSum);
+                        System.out.println(random);
+                        int nextRand = 0;
+                        for (Toy toy : toysPrize.getToys()) {
+                            if (random >= nextRand && random < nextRand + toy.getWeight()) {
+                                System.out.printf("Ваш выигрыш игрушка с id %d, поздравляем!\n", toy.getId());
+                            }
+                            nextRand += toy.getWeight();
+                        }
 
                     } else if (choise.equals("6")){ // Выход
                         subMenu = false;
