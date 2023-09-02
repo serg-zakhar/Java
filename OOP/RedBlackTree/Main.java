@@ -41,7 +41,7 @@ class BinaryTree{
                         node.left = new Node();
                         node.left.value = value;
                         node.left.color = Color.RED;
-                        // node.left = rebalance(node.left);
+                        node.left = rebalance(node.left);
                         return true;
                     } else {
                         node = node.left;
