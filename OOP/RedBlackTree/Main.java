@@ -41,7 +41,7 @@ class BinaryTree{
                         node.left = new Node();
                         node.left.value = value;
                         node.left.color = Color.RED;
-                        node.left = rebalance(node.left);
+                        // node.left = rebalance(node.left);
                         return true;
                     } else {
                         node = node.left;
@@ -57,25 +57,24 @@ class BinaryTree{
         node.right.color = Color.BLACK;
         node.color = Color.RED;
     }
+        
 
     private Node leftTurn(Node node){
-        Node left = node.left;
-        Node change = left.right;
-        left.right = node;
-        node.left = change;
-        left.color = node.color;
+        Node change = node.right;
+        node.right = change.left;
+        change.left = node;
+        change.color = node.color;
         node.color = Color.RED;
-        return left;
+        return change;
     }
 
      private Node rightTurn(Node node){
-        Node right = node.right;
-        Node change = right.left;
-        right.left = node;
-        node.right = change;
-        right.color = node.color;
+        Node change = node.left;
+        node.left = change.right;
+        change.right = node;
+        change.color = node.color;
         node.color = Color.RED;
-        return right;
+        return change;
     }
 
     private Node rebalance(Node node){
@@ -86,12 +85,12 @@ class BinaryTree{
             if (result.right != null && result.right.color == Color.RED &&
                 (result.left == null || result.left.color == Color.BLACK)) {
                 needRebalance = true;
-                result = rightTurn(result);
+                result = leftTurn(result);
             }
             if (result.left != null && result.left.color == Color.RED &&
                 result.left.left != null && result.left.left.color == Color.RED){
                 needRebalance = true;
-                result = leftTurn(result);
+                result = rightTurn(result);
             }
             if (result.left != null && result.left.color == Color.RED &&
                 result.right != null && result.right.color == Color.RED){
