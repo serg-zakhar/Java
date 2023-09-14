@@ -18,10 +18,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Scanner;
 
 public class FileManager {
-    
-    // Метод для чтения содержимого файла
+
     public String readFile(String filePath) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             StringBuilder content = new StringBuilder();
@@ -33,44 +33,77 @@ public class FileManager {
         }
     }
 
-    // Метод для записи текста в файл
     public void writeFile(String filePath, String content) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(content);
         }
     }
 
-    // Метод для копирования файла
-    public void copyFile(String sourceFilePath, String destinationFilePath) throws IOException {
+    public void copyFile(String sourceFilePath, String destFilePath) throws IOException {
         File sourceFile = new File(sourceFilePath);
-        File destinationFile = new File(destinationFilePath);
+        File destFile = new File(destFilePath);
 
         if (!sourceFile.exists()) {
             throw new FileNotFoundException("Файл не найден: " + sourceFilePath);
         }
 
-        // Используем метод из библиотеки Java NIO для копирования с заменой существующего файла
-        Files.copy(sourceFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(sourceFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
     public static void main(String[] args) {
+
         FileManager fileManager = new FileManager();
+        Scanner sc = new Scanner(System.in);
+        String filepath = "Exceptions\\Lesson3\\";
 
-        try {
-            // Примеры использования методов
-            String content = fileManager.readFile("example.txt");
-            System.out.println("Содержимое файла: ");
-            System.out.println(content);
+        while (true) {
+            System.out.println("Выберите пункт меню:");
+            System.out.println("1. Открыть файл");
+            System.out.println("2. Записать текст в файл");
+            System.out.println("3. Скопировать файл");
+            System.out.println("4. Выход");
+            String choice = sc.nextLine();
 
-            String newText = "Новый текст для записи в файл.";
-            fileManager.writeFile("newfile.txt", newText);
-            System.out.println("Файл успешно записан.");
+            if (choice.equals("1")) {
+                try {
+                    System.out.println("Введите имя файла:");
+                    String filename = sc.nextLine();
+                    String content = fileManager.readFile(filepath + filename);
+                    System.out.println("Содержимое файла: ");
+                    System.out.println(content);
+                } catch (IOException e) {
+                    System.err.println("Ошибка при работе с файлом: " + e.getMessage());
+                }
+            } else if (choice.equals("2")) {
+                try {
+                    System.out.println("Введите имя файла для записи:");
+                    String filename = sc.nextLine();
+                    System.out.println("Введите текст для записи в файл:");
+                    String newText = sc.nextLine();
+                    fileManager.writeFile(filepath+filename, newText);
+                    System.out.println("Файл успешно записан.");
+                } catch (IOException e) {
+                    System.err.println("Ошибка при работе с файлом: " + e.getMessage());
+                }
+            } else if (choice.equals("3")) {
+                try {
+                    System.out.println("Введите имя файла источника:");
+                    String sourcefile = sc.nextLine();
+                    System.out.println("Введите имя файла назначенияЖ");
+                    String destfile = sc.nextLine();
+                    fileManager.copyFile(filepath+sourcefile, filepath+destfile);
+                    System.out.println("Файл успешно скопирован.");
+                } catch (IOException e) {
+                    System.err.println("Ошибка при работе с файлом: " + e.getMessage());
+                }
+            } else if (choice.equals("4")) {
+                System.out.println("Выход");
+                break;
+            }
 
-            fileManager.copyFile("source.txt", "destination.txt");
-            System.out.println("Файл успешно скопирован.");
-        } catch (IOException e) {
-            System.err.println("Ошибка при работе с файлом: " + e.getMessage());
         }
+        sc.close();
+
     }
 
 }
